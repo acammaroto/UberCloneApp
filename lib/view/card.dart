@@ -7,7 +7,7 @@ enum CardType { xs, small, medium, large, xl }
 class CardPanel extends StatelessWidget {
   final String title;
   final String time;
-  final String image;
+  final Image image;
   final Color color;
 
   final CardType type;
@@ -26,40 +26,77 @@ class CardPanel extends StatelessWidget {
     return Expanded(
       flex: type.index,
       child: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              child: Text(
-                title,
-                style: color == Colors.black ? h1White : h1Black,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: SizedBox(
+            height: 120,
+            child: Stack(children: [
+              Positioned(
+                top: 10,
+                left: 10,
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    title,
+                    style: color == Colors.black ? h1White : h1Black,
+                  ),
+                ),
               ),
-            ),
-            Container(
-              alignment: Alignment.topLeft,
-              child: Text(
-                time,
-                style: color == Colors.black
-                    ? labelWhiteRegularStyle
-                    : labelGreyRegularStyle,
+              Positioned(
+                top: 30,
+                left: 10,
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    time,
+                    style: color == Colors.black
+                        ? labelWhiteRegularStyle
+                        : labelGreyRegularStyle,
+                  ),
+                ),
               ),
-            ),
-            Container(
-              alignment: Alignment.bottomRight,
-              child: Text(
-                image,
-                style: TextStyle(fontSize: 40, color: Colors.white),
+              Positioned(
+                bottom: -20,
+                right: -20,
+                child: Container(
+                    margin: EdgeInsets.only(), height: 100, child: image),
               ),
-            )
-          ],
-        ),
-      ),
+            ]),
+          )
+          // child: Column(
+          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //   children: [
+          //     Container(
+          //       alignment: Alignment.topLeft,
+          //       child: Text(
+          //         title,
+          //         style: color == Colors.black ? h1White : h1Black,
+          //       ),
+          //     ),
+          //     Container(
+          //       alignment: Alignment.topLeft,
+          //       child: Text(
+          //         time,
+          //         style: color == Colors.black
+          //             ? labelWhiteRegularStyle
+          //             : labelGreyRegularStyle,
+          //       ),
+          //     ),
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.end,
+          //       children: [
+          //         Container(
+          //             transformAlignment: Alignment.bottomRight,
+          //             width: 40,
+          //             alignment: Alignment.bottomRight,
+          //             child: image),
+          //       ],
+          //     )
+          //   ],
+          // ),
+          ),
     );
   }
 }

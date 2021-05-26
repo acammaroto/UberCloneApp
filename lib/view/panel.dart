@@ -5,6 +5,8 @@ import 'package:uber_clone/view/card.dart';
 import 'package:uber_clone/view/event_card.dart';
 
 class Panel extends StatelessWidget {
+  final deliveryTruckImage =
+      Image(image: AssetImage("images/delivery.png"), fit: BoxFit.cover);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,21 +24,25 @@ class Panel extends StatelessWidget {
                       color: white, borderRadius: BorderRadius.circular(15)),
                   child: Row(
                     children: [
-                      Text(
-                        "🏎",
-                        style: TextStyle(
-                          fontSize: 40,
+                      Container(
+                        width: 100,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("images/taxi.png"),
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       SizedBox(
-                        width: 40,
+                        width: 10,
                       ),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Lorem ipsum dolor",
+                              "Hello user,",
                               style: labelGreyRegularStyle,
                             ),
                             Text(
@@ -62,7 +68,7 @@ class Panel extends StatelessWidget {
           Row(
             children: [
               CardPanel(
-                image: '🍕',
+                image: deliveryTruckImage,
                 time: '20 mins',
                 title: 'Eats',
                 type: CardType.small,
@@ -73,7 +79,7 @@ class Panel extends StatelessWidget {
                 child: SizedBox(width: 5),
               ),
               CardPanel(
-                image: '🍱',
+                image: deliveryTruckImage,
                 time: '20 mins',
                 title: 'Market',
                 type: CardType.small,
@@ -84,7 +90,7 @@ class Panel extends StatelessWidget {
                 child: SizedBox(width: 5),
               ),
               CardPanel(
-                image: '📦',
+                image: deliveryTruckImage,
                 time: '20 mins',
                 title: 'Delivery',
                 type: CardType.small,
@@ -98,7 +104,7 @@ class Panel extends StatelessWidget {
           Row(
             children: [
               CardPanel(
-                image: '🚖',
+                image: deliveryTruckImage,
                 time: '16 mins',
                 title: 'Home',
                 type: CardType.medium,
@@ -109,7 +115,7 @@ class Panel extends StatelessWidget {
                 child: SizedBox(width: 5),
               ),
               CardPanel(
-                image: '→',
+                image: deliveryTruckImage,
                 time: '',
                 title: 'Health',
                 type: CardType.small,
@@ -121,7 +127,7 @@ class Panel extends StatelessWidget {
           Row(
             children: [
               CardPanel(
-                image: '🛵',
+                image: deliveryTruckImage,
                 time: '200 m',
                 title: 'Scooter',
                 type: CardType.small,
@@ -132,7 +138,7 @@ class Panel extends StatelessWidget {
                 child: SizedBox(width: 5),
               ),
               CardPanel(
-                image: '🚲',
+                image: deliveryTruckImage,
                 time: '330m',
                 title: 'Bike',
                 type: CardType.small,
@@ -143,7 +149,7 @@ class Panel extends StatelessWidget {
                 child: SizedBox(width: 5),
               ),
               CardPanel(
-                image: '🚔',
+                image: deliveryTruckImage,
                 time: '25 min',
                 title: 'Work',
                 type: CardType.small,

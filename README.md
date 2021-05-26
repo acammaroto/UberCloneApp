@@ -1,2 +1,2 @@
-# UberCloneApp
- This is a clone and a restyle of the Uber app. I made it using Flutter.
+# Restyle the Uber app in Flutter
+If you don't know I spent a little bit of my time making restyling of famous app using Flutter. I already made an Instagram clone, YouTube clone, Netflix clone. Be sure to check out the repository to see what I am talking about.
